@@ -5,6 +5,7 @@ The game will be a real-time strategy (RTS) combat game with a third-person isom
 ## Menu System
 ### Main Menu
 The main menu will be what the user first views on opening the game. This system should support resource-driven templates in order to facilitate future modifications.
+
 1. New Game
   * The user can select a single map or campaign where resources will carry from map to map
   * The user will select the AI parameters
@@ -13,7 +14,9 @@ The main menu will be what the user first views on opening the game. This system
 3. Options
   * This screen will contain options to change graphics settings, mouse/keyboard settings, and audio settings.
 4. Exit
-In Game
+
+### In Game
+
 1. Save Game
   * The user will save their current progress to disk. This should have the necessary file browser, overwrite warnings, and generate a summary of the map.
 2. Load Game
@@ -42,6 +45,7 @@ Campaigns will be maps strung together where units and scores are carried from m
 
 ### User Interactions
 The user can:
+
 1. Select a single friendly unit
 2. Select a group of friendly units via shift-click or dragging a box.
 3. Order selected units to move, fire, or change stance.
@@ -50,6 +54,7 @@ The user can:
 
 ## AI Components
 The AI should have the following behaviour:
+
 1. Dynamic pathfinding
   * Using A* against a grid defined for each map, the unit should be able to direct themselves independently to a target point.
     * This map will need to be weighted for each type of unit.
