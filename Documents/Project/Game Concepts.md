@@ -72,7 +72,37 @@ The AI should have the following behaviour:
   * This behaviour will be available to both AI and player vehicles.
 
 ## Vehicles
+Vehicles will be identified by two factors: Epoch and Modifications.
+
 ### Air Vehicles
+Not sure if we want real-world aircraft/vehicles other than as stand-ins for abstract concepts.
+
+1. Epoch: Classical (Vietnam)
+  * Scout/Recon (Prop/Helo - Sandy/Huey)
+  * Precision Attack (A6)
+  * Bombing (B52)
+  * Tank busting (A1 Skyraider)
+  * AA? (F4)
+2. Epoch: Modern (Gulf War)
+  * Scout/Recon (Drone)
+  * Precision Attack (F16)
+  * Bombing (B1)
+  * Tank Busting (A10)
+  * AA (F15)
+3. Epoch: Next Gen (Current)
+  * Scout/Recon (Stealth Drone)
+  * Precision Attack (F35)
+  * Bombing (B2)
+  * Tank Busting (F35)
+  * AA (F22)
+4. Epoch: Future (near-term future)
+  * Scout/Recon (hover/vstol drone - - think Terminator tilt-jets)
+  * Precision Attack (?)
+  * Bombing (?)
+  * Tank Busting (?)
+  * AA (?)
+5. At least one more epoch.
+	
 ### Ground Vehicles
 ## Modifications
 ### Weapons
