@@ -52,13 +52,25 @@ The user can:
 4. Stats for selected units will be visible on the screen.
 5. On hovering a visible unit, the user will have a separate pop-up of unit variables. The amount of data will determine on friendly or not.
 
+### Data to User
+The user will have the entire map visible at the start, but will suffer from "fog of war." This may not literally be represented as an obscured area of the map but will be areas where the user cannot see current situations (i.e. opposing units and actions will go invisible). The user will always have visibility on command point changes (such as losing control of a non-visible point).
+
+The user will have an on screen menu system providing feedback on their current mission status, unit status (by group or individual), and environmental status.
+
 ## AI Components
 The AI should have the following behaviour:
 
 1. Dynamic pathfinding
   * Using A* against a grid defined for each map, the unit should be able to direct themselves independently to a target point.
     * This map will need to be weighted for each type of unit.
-  * The units travelling should not have abrupt turning points when reaching a node; in other words, bezier curves or some other form of linear smoothing should be used
+    * This will be a 3D non-smoothed Astar path using diagonals
+    * Tie breaking heuristics will use a value weighted to the end of the path
+  * Upgrade this later to Theta-star
+    * This will only exist in 2D at first, LOS calculated by Bresenham's algorithm.
+    * Upgrade to 3D later
+  * This will later be changed to use either HPA or HPT calculations
+    * Need to understand this more
+  * The units travelling should not have abrupt turning points when reaching a node; in other words, bezier curves or some other form of linear smoothing should be used. Consider DStar if still using AStar at that point.
 2. Tactical decision making
   * The AI engine should have the overall ability to determine near-optimal placement of units based on terrain type, unit variables, and user behaviour.
   * This placement can be considered a number of ways
@@ -68,6 +80,7 @@ The AI should have the following behaviour:
 3. Individual decision making
   * Each unit should have a limited ability to react to immediate prospects.
   * This includes firing, limited retreating, limited advancing, ammunition type choice, and morale influenced behaviour (such as flee/surrender).
+  * Firing controls will automatically calculate trajectory based on speed, ammunition, opposing target, and a variance introduced based on experience and skill.
   * A unit can optimize their own placement within the scope of the tactical commands
   * This behaviour will be available to both AI and player vehicles.
 
